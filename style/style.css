@@ -1,9 +1,15 @@
 body {
 	font-family: Arial;
+	margin-right: 20%;
+	margin-left: 10%;
 }
-/*
+
+svg {
+  background: #E6F2F4;
+}
+
 path {
   stroke: white;
   stroke-width: 0.25px;
   fill: grey;
-}*/
+}
