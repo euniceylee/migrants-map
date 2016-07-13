@@ -2,9 +2,8 @@ var width = 960,
     height = 500;
 
 var projection = d3.geo.mercator()
-    .center([0, 5 ])
-    .scale(180)
-    .rotate([-180,0]);
+    .translate([480, 320])
+    .scale(300);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -16,7 +15,7 @@ var path = d3.geo.path()
 var g = svg.append("g");
 
 // load and display the World
-d3.json("world-110m2.json", function(error, topology) {
+d3.json("world-topo-min.json", function(error, topology) {
 
 // load and display the cities
 d3.csv("final-refugee-athletes-1.csv", function(error, data) {
