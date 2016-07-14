@@ -18,22 +18,26 @@ var g = svg.append("g");
 d3.json("world-topo-min.json", function(error, topology) {
 
 // load and display the cities
-d3.csv("final-refugee-athletes-2.csv", function(data) {
+d3.csv("final-refugee-athletes.csv", function(data) {
     svg.selectAll("circle")
        .data(data)
        .enter()
-       .append("circle") //idk what this does
+       .append("circle") 
        .attr("cx", function(d) {
                return projection([d.lon, d.lat])[0];
        })
        .attr("cy", function(d) {
                return projection([d.lon, d.lat])[1];
        })
-       .attr("r", 3)
-       .style("fill", "yellow")
+       .attr("r", 1.5)
+       .style("fill", "black")
        .style("stroke", "black");
 });
 
+//color-coordinate the refugee countries???
+//label the countries using AI2HTML??
+
+//this projects everything
 g.selectAll("path")
       .data(topojson.object(topology, topology.objects.countries)
           .geometries)
