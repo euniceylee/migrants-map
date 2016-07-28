@@ -1,9 +1,34 @@
-var width = 960,
-    height = 500;
 
+//desktop version
+// var width = 960,
+//     height = 500;
+
+//mobile version
+// var width = 320,
+//     height = 290;
+
+//regular version
+var width = 600,
+    height = 480;
+
+
+//This is for the full version of the map
+// var projection = d3.geo.mercator()
+//     .translate([190, 190])
+//     .scale(160);
+
+// var projection = d3.geo.mercator();
+
+
+//This is for the close up of syria and germany
 var projection = d3.geo.mercator()
-    .translate([480, 340])
-    .scale(308);
+    .translate([10, 900])
+    .scale(800);
+
+//close up of kenya
+// var projection = d3.geo.mercator()
+//     .translate([-600, 300])
+//     .scale(1300);
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -18,7 +43,7 @@ var g = svg.append("g");
 d3.json("world-topo-min.json", function(error, topology) {
 
 // load and display the cities
-d3.csv("final-refugee-athletes.csv", function(data) {
+d3.csv("syria-routes.csv", function(data) {
     svg.selectAll("circle")
        .data(data)
        .enter()
@@ -59,3 +84,4 @@ g.selectAll("path")
 //   });
 
 // svg.call(zoom)
+
